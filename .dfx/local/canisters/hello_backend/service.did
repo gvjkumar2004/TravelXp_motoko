@@ -1,0 +1,18 @@
+type ResponseDataAllFiles = 
+ record {
+   data: vec record {
+               text;
+               text;
+             };
+   status: bool;
+ };
+type ResponseData = 
+ record {
+   data: text;
+   status: bool;
+ };
+service : {
+  getAllFiles: () -> (ResponseDataAllFiles) query;
+  getFile: (text) -> (ResponseData) query;
+  saveFile: (text, text) -> (ResponseData);
+}
